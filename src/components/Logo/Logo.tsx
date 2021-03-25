@@ -1,9 +1,9 @@
 import React from 'react';
 import './Logo.css';
 
-const Logo = () => {
+const Logo = ({ ...rest }) => {
   return (
-    <svg className="Logo" viewBox="0 0 111 30" focusable="false">
+    <svg viewBox="0 0 111 30" focusable="false" {...rest}>
       <g>
         <path
           className="Logo__path"
