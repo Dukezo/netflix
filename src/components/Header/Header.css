@@ -1,0 +1,19 @@
+.Header {
+  display: flex;
+  justify-content: center;
+}
+
+.Header__logo {
+  width: 170px;
+}
+
+.Header__rightSide {
+  margin-left: auto;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .Header__logo {
+    width: 120px;
+  }
+}
