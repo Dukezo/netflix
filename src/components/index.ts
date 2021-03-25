@@ -8,3 +8,4 @@ export { default as RedirectSignupForm } from './RedirectSignupForm/RedirectSign
 export { default as Feature } from './Feature/Feature';
 export { default as HeaderHero } from './HeaderHero/HeaderHero';
 export { default as Input } from './Input/Input';
+export { default as TVAnimation } from './TVAnimation/TVAnimation';
