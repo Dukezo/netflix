@@ -1,0 +1,19 @@
+.TVAnimation {
+  position: relative;
+}
+
+.TVAnimation__image {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.TVAnimation__video {
+  position: absolute;
+  left: 49.5%;
+  top: 48.1%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 73%;
+}
