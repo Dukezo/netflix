@@ -3,14 +3,29 @@
   padding: 15px 0;
 }
 
+.Feature--hasAnimation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Feature--hasAnimation > .Feature__info {
+}
+
 .Feature__title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
 .Feature__desc {
   font-size: 1.5rem;
-  margin-top: 15px;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+
+.Feature__animation {
+  width: 100%;
+  margin-left: 120px;
 }
 
 @media (max-width: 992px) {

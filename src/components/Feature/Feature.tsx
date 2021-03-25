@@ -3,14 +3,17 @@ import './Feature.css';
 
 interface Props {
   title: string;
-  image?: string;
+  animation?: JSX.Element;
 }
 
-const Feature: React.FC<Props> = ({ title, image, children }) => {
+const Feature: React.FC<Props> = ({ title, animation, children }) => {
   return (
-    <div className="Feature">
-      <h1 className="Feature__title">{title}</h1>
-      <p className="Feature__desc">{children}</p>
+    <div className={`Feature${animation !== null && ' Feature--hasAnimation'}`}>
+      <div className="Feature__info">
+        <h1 className="Feature__title">{title}</h1>
+        <p className="Feature__desc">{children}</p>
+      </div>
+      {animation && <div className="Feature__animation">{animation}</div>}
     </div>
   );
 };
