@@ -1,0 +1,12 @@
+.LanguagePicker {
+  color: white;
+  background-color: transparent;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+}
+
+.LanguagePicker option {
+  background-color: white;
+  color: black;
+}
