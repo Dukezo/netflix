@@ -1,1 +1,10 @@
 export { default as Logo } from './Logo/Logo';
+export { default as Hero } from './Hero/Hero';
+export { default as Header } from './Header/Header';
+export { default as Button } from './Button/Button';
+export { default as LanguagePicker } from './LanguagePicker/LanguagePicker';
+export { default as Menu } from './Menu/Menu';
+export { default as RedirectSignupForm } from './RedirectSignupForm/RedirectSignupForm';
+export { default as Feature } from './Feature/Feature';
+export { default as HeaderHero } from './HeaderHero/HeaderHero';
+export { default as Input } from './Input/Input';
