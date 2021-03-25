@@ -1,0 +1,39 @@
+.AccordionItem {
+  margin-top: 8px;
+  font-size: 1.5rem;
+}
+
+.AccordionItem__heading {
+  display: flex;
+  align-items: center;
+  padding: 18px 25px;
+  background-color: #303030;
+  cursor: pointer;
+  user-select: none;
+}
+
+.AccordionItem__iconWrapper {
+  margin-left: auto;
+  font-size: 1.4rem;
+}
+
+.AccordionItem__iconWrapper path {
+  stroke: white;
+}
+
+.AccordionItem__descriptionWrapper {
+  background-color: #303030;
+  margin-top: 1px;
+  transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+  max-height: 0;
+  overflow: hidden;
+}
+
+.AccordionItem__descriptionWrapper--collapsed {
+  max-height: 1000px;
+}
+
+.AccordionItem__description {
+  padding: 25px 25px;
+  text-align: left;
+}

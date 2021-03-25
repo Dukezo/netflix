@@ -11,3 +11,5 @@ export { default as Input } from './Input/Input';
 export { default as TVAnimation } from './TVAnimation/TVAnimation';
 export { default as PhoneAnimation } from './PhoneAnimation/PhoneAnimation';
 export { default as MacAnimation } from './MacAnimation/MacAnimation';
+export { default as Accordion } from './Accordion/Accordion';
+export { default as FaqAccordion } from './Accordion/FaqAccordion/FaqAccordion';

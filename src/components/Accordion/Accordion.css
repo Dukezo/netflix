@@ -1,0 +1,9 @@
+.Accordion {
+  color: white;
+}
+
+.Accordion__title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+}
