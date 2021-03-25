@@ -1,14 +1,26 @@
 import React from 'react';
+import mergeClassNames from '../../utils/merge-class-names';
 import './Feature.css';
 
 interface Props {
   title: string;
   animation?: JSX.Element;
+  flipped?: boolean;
 }
 
-const Feature: React.FC<Props> = ({ title, animation, children }) => {
+const Feature: React.FC<Props> = ({
+  title,
+  animation,
+  flipped = false,
+  children,
+}) => {
+  let classNames: string[] = [];
+
+  if (animation !== null) classNames.push('Feature--hasAnimation');
+  if (flipped) classNames.push('Feature--flipped');
+
   return (
-    <div className={`Feature${animation !== null && ' Feature--hasAnimation'}`}>
+    <div className={mergeClassNames('Feature', ...classNames)}>
       <div className="Feature__info">
         <h1 className="Feature__title">{title}</h1>
         <p className="Feature__desc">{children}</p>

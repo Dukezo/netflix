@@ -6,10 +6,24 @@
 .Feature--hasAnimation {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.Feature--hasAnimation > .Feature__info {
+.Feature--flipped {
+  flex-direction: row-reverse;
+}
+
+.Feature--flipped > .Feature__animation {
+  flex-direction: row-reverse;
+  margin-left: 0;
+}
+
+.Feature--flipped > .Feature__info {
+  flex-direction: row-reverse;
+  margin-left: 100px;
+}
+
+.Feature__info {
+  flex: 1;
 }
 
 .Feature__title {
@@ -24,12 +38,26 @@
 }
 
 .Feature__animation {
-  width: 100%;
-  margin-left: 120px;
+  margin-left: 100px;
+  flex: 1;
 }
 
 @media (max-width: 992px) {
   .Feature__title {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    z-index: 1;
+  }
+
+  .Feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Feature__animation {
+    margin: 0;
+  }
+
+  .Feature--flipped > .Feature__info {
+    margin: 0;
   }
 }
