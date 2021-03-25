@@ -1,0 +1,47 @@
+.PhoneAnimation {
+  position: relative;
+}
+
+.PhoneAnimation__image {
+  width: 100%;
+  margin: auto;
+}
+
+.PhoneAnimation__downloadContainer {
+  position: absolute;
+  display: flex;
+  background-color: black;
+  padding: 10px 15px;
+  border-radius: 15px;
+  border: 1px solid gray;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 80%;
+  width: 70%;
+  height: 80px;
+}
+
+.PhoneAnimation__downloadPoster {
+  object-fit: cover;
+  height: 100%;
+}
+
+.PhoneAnimation__downloadInfo {
+  margin-left: 15px;
+  line-height: 1.3;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.PhoneAnimation__downloadTitle {
+  font-weight: bold;
+}
+
+.PhoneAnimation__downloadStatus {
+  color: #0171eb;
+}
+
+.PhoneAnimation__downloadIcon {
+  height: 100%;
+}
