@@ -6,12 +6,14 @@ interface Props {
   title: string;
   animation?: JSX.Element;
   flipped?: boolean;
+  titleFontSize?: string;
 }
 
 const Feature: React.FC<Props> = ({
   title,
   animation,
   flipped = false,
+  titleFontSize,
   children,
 }) => {
   let classNames: string[] = [];
@@ -22,7 +24,14 @@ const Feature: React.FC<Props> = ({
   return (
     <div className={mergeClassNames('Feature', ...classNames)}>
       <div className="Feature__info">
-        <h1 className="Feature__title">{title}</h1>
+        <h1
+          className="Feature__title"
+          style={
+            titleFontSize !== null ? { fontSize: titleFontSize } : undefined
+          }
+        >
+          {title}
+        </h1>
         <p className="Feature__desc">{children}</p>
       </div>
       {animation && <div className="Feature__animation">{animation}</div>}

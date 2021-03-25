@@ -44,7 +44,7 @@
 
 @media (max-width: 992px) {
   .Feature__title {
-    font-size: 2.8rem;
+    font-size: 2.8rem !important;
     z-index: 1;
   }
 

@@ -18,7 +18,10 @@ const FeatureHero = () => {
         <Menu items={[<LanguagePicker />, <Button>Sign In</Button>]} />
       </Header>
       <div className="HeaderHero__content">
-        <Feature title="Unlimited movies, TV shows, and more.">
+        <Feature
+          title="Unlimited movies, TV shows, and more."
+          titleFontSize="4rem"
+        >
           Watch anywhere. Cancel anytime.
         </Feature>
         <RedirectSignupForm />
