@@ -1,0 +1,13 @@
+.HeaderHero__content {
+  text-align: center;
+  margin-top: 150px;
+  margin: 150px auto 0 auto;
+  max-width: 700px;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .HeaderHero__content {
+    max-width: 600px;
+  }
+}
