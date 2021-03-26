@@ -13,3 +13,5 @@ export { default as PhoneAnimation } from './PhoneAnimation/PhoneAnimation';
 export { default as MacAnimation } from './MacAnimation/MacAnimation';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as FaqAccordion } from './Accordion/FaqAccordion/FaqAccordion';
+export { default as Footer } from './Footer/Footer';
+export { default as GridMenu } from './GridMenu/GridMenu';

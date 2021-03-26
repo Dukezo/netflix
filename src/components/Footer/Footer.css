@@ -1,0 +1,23 @@
+.Footer {
+  color: #757575;
+  font-size: 0.8rem;
+}
+
+.Footer__menu {
+  margin-top: 20px;
+}
+
+.Footer__languagePicker {
+  margin-top: 25px;
+}
+
+.Footer__languagePicker select {
+  color: #757575;
+  border-color: #757575;
+  padding: 12px 22px;
+  font-size: 1rem;
+}
+
+.Footer__company {
+  margin-top: 25px;
+}
