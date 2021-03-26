@@ -1,0 +1,29 @@
+.GridMenu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.GridMenu__column {
+  list-style: none;
+  padding-right: 12px;
+}
+
+.GridMenu__column li {
+  margin: 15px 0;
+}
+
+.GridMenu__column li a {
+  text-decoration: none;
+  color: #757575;
+}
+
+.GridMenu__column li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .GridMenu__column {
+    flex-basis: 34%;
+  }
+}
