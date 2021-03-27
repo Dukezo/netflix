@@ -2,11 +2,11 @@ import React from 'react';
 import mergeClassNames from '../../utils/merge-class-names';
 import './Button.css';
 
-interface Props {
-  [x: string]: any;
-}
+interface Props {}
 
-const Button: React.FC<Props> = ({ children, ...props }) => {
+const Button: React.FC<
+  Props & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ children, ...props }) => {
   return (
     <button {...props} className={mergeClassNames('Button', props.className)}>
       {children}

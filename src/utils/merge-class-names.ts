@@ -1,4 +1,4 @@
-export default function mergeClassNames(...classNames: string[]) {
+export default function mergeClassNames(...classNames: (string | undefined)[]) {
   let merged = '';
 
   classNames.forEach((className) => {
