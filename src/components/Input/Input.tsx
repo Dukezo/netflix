@@ -6,21 +6,20 @@ interface Props {
   name: string;
   label: string;
   type: string;
-  [x: string]: any;
 }
 
-const Input = ({ name, label, type, ...props }: Props) => {
+const Input = ({
+  label,
+  ...props
+}: Props & React.InputHTMLAttributes<HTMLInputElement>) => {
   return (
-    <div {...props} className={mergeClassNames('Input', props.className)}>
+    <div className="Input">
       <input
-        id={`input_${name}`}
-        type={type}
-        className="Input__inputField"
+        {...props}
+        className={mergeClassNames('Input__inputField', props.className)}
         placeholder=" "
       />
-      <label htmlFor={`input_${name}`} className="Input__label">
-        {label}
-      </label>
+      <label className="Input__label">{label}</label>
     </div>
   );
 };
