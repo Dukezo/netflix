@@ -9,15 +9,21 @@ interface Props {
 const GridMenu = ({ links: items }: Props) => {
   return (
     <div className="GridMenu">
-      {items.map((column) => {
-        let elements: JSX.Element[] = column.map(({ title, href }) => {
-          return (
-            <li>
-              <a href={href}>{title}</a>
-            </li>
-          );
-        });
-        return <ul className="GridMenu__column">{elements}</ul>;
+      {items.map((column, columnIdx) => {
+        let elements: JSX.Element[] = column.map(
+          ({ title, href }, elementIdx) => {
+            return (
+              <li key={elementIdx}>
+                <a href={href}>{title}</a>
+              </li>
+            );
+          }
+        );
+        return (
+          <ul key={columnIdx} className="GridMenu__column">
+            {elements}
+          </ul>
+        );
       })}
     </div>
   );
