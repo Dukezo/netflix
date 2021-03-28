@@ -1,0 +1,49 @@
+.Home {
+  background-color: black;
+}
+
+.Home__row {
+  border-top: 8px solid #222;
+}
+
+.Home__feature {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 40px 30px 40px;
+}
+
+.Home__faq {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 70px 50px;
+}
+
+.Home__faqForm {
+  margin: 50px 50px 0 50px;
+}
+
+.Home__footer {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 70px 50px 35px 50px;
+}
+
+@media (max-width: 992px) {
+  .Home__feature {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+
+  .Home__faq {
+    padding-bottom: 40px;
+  }
+
+  .Home__faqForm {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
