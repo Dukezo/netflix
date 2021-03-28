@@ -45,7 +45,6 @@
 @media (max-width: 992px) {
   .Feature__title {
     font-size: 2.8rem !important;
-    z-index: 1;
   }
 
   .Feature {
@@ -55,6 +54,11 @@
 
   .Feature__animation {
     margin: 0;
+    overflow: hidden;
+  }
+
+  .Feature__animation--mobileMoveUp > * {
+    margin-top: -40px;
   }
 
   .Feature--flipped > .Feature__info {

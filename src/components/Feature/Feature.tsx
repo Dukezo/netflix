@@ -5,6 +5,7 @@ import './Feature.css';
 interface Props {
   title: string;
   animation?: JSX.Element;
+  adjustAnimationMobileMargin?: boolean;
   flipped?: boolean;
   titleFontSize?: string;
 }
@@ -12,6 +13,7 @@ interface Props {
 const Feature: React.FC<Props> = ({
   title,
   animation,
+  adjustAnimationMobileMargin = false,
   flipped = false,
   titleFontSize,
   children,
@@ -34,7 +36,15 @@ const Feature: React.FC<Props> = ({
         </h1>
         <p className="Feature__desc">{children}</p>
       </div>
-      {animation && <div className="Feature__animation">{animation}</div>}
+      {animation && (
+        <div
+          className={mergeClassNames('Feature__animation', {
+            'Feature__animation--mobileMoveUp': adjustAnimationMobileMargin,
+          })}
+        >
+          {animation}
+        </div>
+      )}
     </div>
   );
 };
