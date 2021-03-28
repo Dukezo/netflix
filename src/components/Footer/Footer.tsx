@@ -15,9 +15,7 @@ const Footer = ({ menuLinks }: Props) => {
       <div className="Footer__menu">
         <GridMenu links={menuLinks} />
       </div>
-      <div className="Footer__languagePicker">
-        <LanguagePicker />
-      </div>
+      <LanguagePicker className="Footer__languagePicker" />
       <div className="Footer__company">Netflix Clone</div>
     </div>
   );
