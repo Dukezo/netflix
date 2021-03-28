@@ -3,9 +3,7 @@ import mergeClassNames from '../../utils/merge-class-names';
 import './Input.css';
 
 interface Props {
-  name: string;
   label: string;
-  type: string;
 }
 
 const Input = ({
