@@ -59,7 +59,9 @@ const Home = (props: Props) => {
       </div>
       <div className="Home__row">
         <div className="Home__footer">
-          <Footer menuLinks={footerLinks} />
+          <Footer menuLinks={footerLinks}>
+            <div className="Home__footerSiteName">Netflix Clone</div>
+          </Footer>
         </div>
       </div>
     </div>

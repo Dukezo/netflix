@@ -8,16 +8,16 @@ interface Props {
   menuLinks: MenuLink[][];
 }
 
-const Footer = ({ menuLinks }: Props) => {
+const Footer: React.FC<Props> = ({ menuLinks, children }) => {
   return (
-    <div className="Footer">
+    <footer className="Footer">
       <h3 className="Footer__hotline">Questions? Call 0800-000-9677</h3>
       <div className="Footer__menu">
         <GridMenu links={menuLinks} />
       </div>
       <LanguagePicker className="Footer__languagePicker" />
-      <div className="Footer__company">Netflix Clone</div>
-    </div>
+      {children}
+    </footer>
   );
 };
 
