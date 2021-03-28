@@ -37,3 +37,9 @@
   padding: 25px 25px;
   text-align: left;
 }
+
+@media (max-width: 576px) {
+  .AccordionItem {
+    font-size: 1.2rem;
+  }
+}

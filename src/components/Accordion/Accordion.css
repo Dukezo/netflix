@@ -7,3 +7,16 @@
   font-size: 2.8rem;
   margin-bottom: 50px;
 }
+
+@media (max-width: 992px) {
+  .Accordion__title {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .Accordion__title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
