@@ -15,3 +15,5 @@ export { default as Accordion } from './Accordion/Accordion';
 export { default as FaqAccordion } from './Accordion/FaqAccordion/FaqAccordion';
 export { default as Footer } from './Footer/Footer';
 export { default as GridMenu } from './GridMenu/GridMenu';
+export { default as SignPageLayout } from './SignPageLayout/SignPageLayout';
+export { default as SignForm } from './SignForm/SignForm';
