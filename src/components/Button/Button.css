@@ -9,8 +9,13 @@
   font-weight: 500;
   cursor: pointer;
   width: 100%;
+  text-decoration: none;
 }
 
 .Button:hover {
   background-color: #f50611;
+}
+
+.Button__link {
+  text-decoration: none;
 }
