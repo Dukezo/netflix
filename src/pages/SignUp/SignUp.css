@@ -1,0 +1,20 @@
+.SignUp__other {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.SignUp__login {
+  text-decoration: none;
+  color: #b3b3b3;
+}
+
+.SignUp__login:hover {
+  text-decoration: underline;
+}
+
+.SignUp__help {
+  margin-left: auto;
+}

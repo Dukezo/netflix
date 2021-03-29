@@ -1,5 +1,7 @@
 import React, { FormEvent, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SignForm, SignPageLayout } from '../../components';
+import { ROUTE_LOGIN } from '../../constants/routes';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -42,6 +44,12 @@ const SignUp = () => {
         buttonText="Sign In"
         onSubmit={handleSubmit}
       />
+      <div className="SignUp__other">
+        <Link to={ROUTE_LOGIN} className="SignUp__login">
+          Already registered?
+        </Link>
+        <span className="SignUp__help">Need help?</span>
+      </div>
     </SignPageLayout>
   );
 };

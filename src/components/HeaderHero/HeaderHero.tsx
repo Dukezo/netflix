@@ -10,12 +10,18 @@ import {
   RedirectSignupForm,
   Feature,
 } from '../../components';
+import { ROUTE_LOGIN } from '../../constants/routes';
 
 const FeatureHero = () => {
   return (
     <Hero image={bgImage}>
       <Header>
-        <Menu items={[<LanguagePicker />, <Button>Sign In</Button>]} />
+        <Menu
+          items={[
+            <LanguagePicker />,
+            <Button link={ROUTE_LOGIN}>Sign In</Button>,
+          ]}
+        />
       </Header>
       <div className="HeaderHero__content">
         <Feature
