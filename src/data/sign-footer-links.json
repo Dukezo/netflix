@@ -1,0 +1,12 @@
+[
+  [
+    { "title": "FAQ", "href": "#" },
+    { "title": "Cookie Preferences", "href": "#" }
+  ],
+  [
+    { "title": "Help Center", "href": "#" },
+    { "title": "Impressum", "href": "#" }
+  ],
+  [{ "title": "Terms of Use", "href": "#" }],
+  [{ "title": "Privacy", "href": "#" }]
+]

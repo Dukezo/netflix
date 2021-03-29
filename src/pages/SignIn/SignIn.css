@@ -1,0 +1,53 @@
+.SignIn__rememberMeContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 0.8rem;
+}
+
+.SIgnIn_rememberMeCheckbox {
+  display: flex;
+  align-items: center;
+}
+
+.SignIn__rememberMeLabel {
+  margin-left: 5px;
+}
+
+.SignIn__help {
+  margin-left: auto;
+}
+
+.SignIn__other {
+  color: #737373;
+  padding-bottom: 70px;
+}
+
+.SignIn__facebook {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 0.8rem;
+}
+
+.SignIn__facebookIcon {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.SignIn__newToNetflix {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.SignIn__signupLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+.SignIn__signupLink:hover {
+  text-decoration: underline;
+}
