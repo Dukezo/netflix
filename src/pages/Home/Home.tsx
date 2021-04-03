@@ -58,11 +58,14 @@ const Home = (props: Props) => {
         </div>
       </div>
       <div className="Home__row">
-        <div className="Home__footer">
-          <Footer menuLinks={footerLinks}>
-            <div className="Home__footerSiteName">Netflix Clone</div>
-          </Footer>
-        </div>
+        <Footer
+          className="Home__footer"
+          menuLinks={footerLinks}
+          showHotlineNumber
+          showLanguagePicker
+        >
+          <div className="Home__footerSiteName">Netflix Clone</div>
+        </Footer>
       </div>
     </div>
   );

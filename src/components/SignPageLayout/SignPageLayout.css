@@ -39,17 +39,10 @@
 
 .SignPageLayout__footerContainer {
   background-color: rgba(0, 0, 0, 0.75);
-  padding: 30px 0 50px 0;
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 10;
-}
-.SignPageLayout__footer {
-  max-width: 900px;
-  width: 100%;
-  margin: auto;
-  padding: 0 30px;
 }
 
 .SignPageLayout__footerLanguagePicker {

@@ -25,12 +25,12 @@ const SignPageLayout: React.FC<Props> = ({ title, children }) => {
         </div>
       </div>
       <div className="SignPageLayout__footerContainer">
-        <div className="SignPageLayout__footer">
-          <Footer
-            menuLinks={footerLinks}
-            languagePickerClassName="SignPageLayout__footerLanguagePicker"
-          />
-        </div>
+        <Footer
+          menuLinks={footerLinks}
+          languagePickerClassName="SignPageLayout__footerLanguagePicker"
+          showHotlineNumber
+          showLanguagePicker
+        />
       </div>
     </div>
   );
