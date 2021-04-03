@@ -1,0 +1,44 @@
+.NavbarDropdown {
+  position: relative;
+}
+
+.NavbarDropdown__dropdown {
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  cursor: default;
+  height: 0;
+}
+
+.NavbarDropdown__dropdown--visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s;
+  z-index: 30;
+  cursor: pointer;
+  height: auto;
+}
+
+.NavbarDropdown__dropdown--filter {
+  right: 50%;
+  transform: translateX(50%);
+  margin-top: 15px;
+}
+
+.NavbarDropdown__dropdown--filter > .NavbarDropdown__caret {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.NavbarDropdown__caret {
+  position: absolute;
+  font-size: 1.5rem;
+  right: -1px;
+  top: -20px;
+}

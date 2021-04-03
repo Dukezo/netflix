@@ -1,0 +1,55 @@
+.NavbarFilterMenu .active {
+  font-weight: 700;
+}
+
+.NavbarFilterMenu__menu {
+  display: flex;
+  list-style: none;
+  margin-left: 35px;
+}
+
+.NavbarFilterMenu__menu a {
+  padding: 0 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.NavbarFilterMenu__mobileMenuTrigger {
+  display: flex;
+  align-items: center;
+}
+
+.NavbarFilterMenu__mobileMenuTrigger svg {
+  font-size: 1.5rem;
+}
+
+.NavbarFilterMenu__mobileMenu {
+  cursor: pointer;
+  margin-left: 30px;
+  display: none;
+}
+
+.NavbarFilterMenu__mobileMenuDropdown {
+  padding: 3px 0;
+}
+
+.NavbarFilterMenu__mobileMenuDropdown a {
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  width: 150px;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .NavbarFilterMenu__menu {
+    display: none;
+  }
+
+  .NavbarFilterMenu__mobileMenu {
+    display: block;
+  }
+}

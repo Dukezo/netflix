@@ -1,0 +1,23 @@
+.NavbarProfile__avatar {
+  border-radius: 3px;
+}
+
+.NavbarProfile__avatar svg {
+  margin-bottom: 3px;
+}
+
+.NavbarProfile__dropdown {
+  list-style: none;
+  padding: 8px;
+}
+
+.NavbarProfile__dropdown li {
+  font-size: 0.85rem;
+  width: 150px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.NavbarProfile__dropdown:hover {
+  text-decoration: underline;
+}

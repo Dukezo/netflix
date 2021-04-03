@@ -1,0 +1,35 @@
+.NavbarNotifications__item {
+  display: flex;
+  justify-content: center;
+  padding: 17px;
+  position: relative;
+  height: 100%;
+}
+
+.NavbarNotifications__item:not(:last-of-type) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.NavbarNotifications__item:hover {
+  background-color: rgba(20, 20, 20, 0.6);
+}
+
+.NavbarNotifications__itemImage {
+  height: 60px;
+  border-radius: 3px;
+}
+
+.NavbarNotifications__itemInfo {
+  margin-left: 15px;
+  width: 240px;
+}
+
+.NavbarNotifications__itemTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.NavbarNotifications__itemTime {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: gray;
+}

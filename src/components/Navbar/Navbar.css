@@ -1,0 +1,46 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  height: 70px;
+  padding: 0 60px;
+  color: white;
+  transition: background-color 0.4s;
+}
+
+.Navbar--scrolled {
+  background-color: rgb(20, 20, 20);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.Navbar__logo {
+  height: 25px;
+}
+
+.Navbar__iconMenu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+  padding-top: 3px;
+}
+
+.Navbar__iconMenu > li {
+  padding: 0 13px;
+  font-size: 1.5rem;
+  /*color: white;*/
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .Navbar {
+    padding-right: 30px;
+  }
+}
