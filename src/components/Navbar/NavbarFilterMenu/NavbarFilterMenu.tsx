@@ -13,8 +13,8 @@ const navLinks = [
 ];
 
 const renderNavLinks = () => {
-  return navLinks.map(({ name, to }) => (
-    <NavLink to={to} exact>
+  return navLinks.map(({ name, to }, idx) => (
+    <NavLink key={idx} to={to} exact>
       {name}
     </NavLink>
   ));
