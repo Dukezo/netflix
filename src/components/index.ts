@@ -17,3 +17,7 @@ export { default as Footer } from './Footer/Footer';
 export { default as GridMenu } from './GridMenu/GridMenu';
 export { default as SignPageLayout } from './SignPageLayout/SignPageLayout';
 export { default as SignForm } from './SignForm/SignForm';
+export { default as Navbar } from './Navbar/Navbar';
+export { default as PlayButton } from './PlayButton/PlayButton';
+export { default as PreviewHero } from './PreviewHero/PreviewHero';
+export { default as Slider } from './Slider/Slider';
