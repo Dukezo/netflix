@@ -1,0 +1,81 @@
+.PreviewHero {
+  height: 980px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-position: top center;
+  display: flex;
+  align-items: center;
+}
+
+.PreviewHero::after {
+  background: linear-gradient(
+    77deg,
+    rgba(0, 0, 0, 0.6) 0,
+    rgba(0, 0, 0, 0) 85%
+  );
+}
+
+.PreviewHero__info {
+  color: white;
+  margin-top: -200px;
+  font-size: 1.6rem;
+  max-width: 680px;
+  line-height: 1.3;
+}
+
+.PreviewHero__description {
+  margin-top: 20px;
+}
+
+.PreviewHero__logo {
+  height: 290px;
+}
+
+.PreviewHero__buttons {
+  margin-top: 30px;
+  display: flex;
+}
+
+.PreviewHero__moreInfo {
+  background-color: rgba(109, 109, 110, 0.7);
+  max-width: 220px;
+  margin-left: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  border-radius: 3px;
+}
+
+.PreviewHero__moreInfo:hover {
+  background-color: rgba(109, 109, 110, 0.5);
+}
+
+.PreviewHero__moreInfo svg {
+  margin-right: 15px;
+  font-size: 1.9rem;
+}
+
+@media (max-width: 576px) {
+  .PreviewHero__title {
+    font-size: 2.5rem;
+  }
+
+  .PreviewHero__description {
+    font-size: 1.5rem;
+  }
+
+  .PreviewHero__buttons {
+    height: 50px;
+    font-size: 1rem;
+    display: block;
+  }
+
+  .PreviewHero__buttons button {
+    margin: auto;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: none;
+  }
+}
