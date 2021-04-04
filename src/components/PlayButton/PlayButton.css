@@ -7,10 +7,11 @@
   display: flex;
   align-items: center;
   width: 170px;
+  cursor: not-allowed;
 }
 
 .PlayButton--sm {
-  padding: 7px 10px 7px 30px;
+  padding: 7px 10px 7px 20px;
 }
 
 .PlayButton:hover {

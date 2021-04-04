@@ -21,3 +21,6 @@ export { default as Navbar } from './Navbar/Navbar';
 export { default as PlayButton } from './PlayButton/PlayButton';
 export { default as PreviewHero } from './PreviewHero/PreviewHero';
 export { default as Slider } from './Slider/Slider';
+export { default as Modal } from './Modal/Modal';
+export { default as Spinner } from './Spinner/Spinner';
+export { default as EpisodeGuide } from './EpisodeGuide/EpisodeGuide';

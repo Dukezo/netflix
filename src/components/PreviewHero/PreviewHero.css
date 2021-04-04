@@ -7,6 +7,17 @@
   align-items: center;
 }
 
+.PreviewHero--modal {
+  height: 500px;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.PreviewHero--modal .PreviewHero__info {
+  margin-top: 180px;
+  font-size: 1.4rem;
+}
+
 .PreviewHero::after {
   background: linear-gradient(
     77deg,

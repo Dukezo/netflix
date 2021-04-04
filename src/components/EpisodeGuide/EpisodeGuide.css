@@ -1,0 +1,100 @@
+.EpisodeGuide {
+  margin-top: 50px;
+  position: relative;
+}
+
+.EpisodeGuide__heading {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.EpisodeGuide__seasonPicker {
+  margin-left: auto;
+  background-color: #242424;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 3px;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.EpisodeGuide__seasonPicker:focus-within {
+  border-color: white;
+}
+
+.EpisodeGuide__seasonPicker svg {
+  position: absolute;
+  font-size: 1.6rem;
+  left: 77%;
+  top: 5px;
+}
+
+.EpisodeGuide__seasonPicker select {
+  color: inherit;
+  font-size: inherit;
+  width: 100%;
+  border: none;
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: 8px 30px 8px 15px;
+  background-color: inherit;
+}
+
+.EpisodeGuide__episodes {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.EpisodeGuide__episode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.EpisodeGuide__episode:first-of-type {
+  border-top: none;
+  padding-top: 5px;
+}
+
+.EpisodeGuide__episode:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.EpisodeGuide__episode > * {
+  padding: 5px 10px;
+}
+
+.EpisodeGuide__number {
+  font-size: 1.7rem;
+  width: 50px;
+  text-align: center;
+}
+
+.EpisodeGuide__image {
+  max-width: 150px;
+}
+
+.EpisodeGuide__info {
+  flex: 2;
+}
+
+.EpisodeGuide__infoDescription {
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+.EpisodeGuide__error {
+  text-align: center;
+  color: red;
+}
