@@ -6,9 +6,10 @@ import './SliderCard.css';
 
 interface Props {
   medium: Medium;
+  showModal(medium: Medium): void;
 }
 
-const SliderCard = ({ medium }: Props) => {
+const SliderCard = ({ medium, showModal }: Props) => {
   const [highlight, setHighlight] = useState(false);
 
   return (
@@ -23,8 +24,14 @@ const SliderCard = ({ medium }: Props) => {
         src={medium.image}
         alt={medium.title}
         onMouseEnter={() => setHighlight(true)}
+        onClick={() => showModal(medium)}
       />
-      <div className="SliderCard__body">
+      <div
+        className="SliderCard__body"
+        onClick={() => {
+          if (highlight) showModal(medium);
+        }}
+      >
         <div className="SliderCard__heading">
           <h4 className="SliderCard__title">{medium.title}</h4>
           <AiOutlineInfoCircle
