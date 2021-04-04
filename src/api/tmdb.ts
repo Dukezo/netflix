@@ -3,8 +3,12 @@ import {
   TmdbEntity,
   TmdbMediaType,
   TmdbMovie,
+  TmdbDetails,
   TmdbTimeWindow,
   TmdbTvShow,
+  TmdbMovieDetails,
+  TmdbTvShowDetails,
+  TmdbSeason,
 } from '../types';
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY as string;
@@ -50,14 +54,7 @@ const discover = async (type: TmdbMediaType, genre?: Genre) => {
       })
   );
   const json = await response.json();
-  const results = json.results as TmdbEntity[];
-  return results.map(
-    (result) =>
-      ({
-        ...result,
-        genres: convertGenreIds(result.genre_ids),
-      } as TmdbEntity)
-  );
+  return json.results as TmdbEntity[];
 };
 
 export const trendingMovies = async (timeWindow: TmdbTimeWindow = 'week') => {
@@ -81,14 +78,36 @@ export const trending = async (
   const json = await response.json();
   let results = json.results as TmdbEntity[];
   // Filter out person media type
-  results = results.filter((result) => isMovie(result) || isTvShow(result));
-  return results.map(
-    (result) =>
-      ({
-        ...result,
-        genres: convertGenreIds(result.genre_ids),
-      } as TmdbEntity)
+  return results.filter((result) => isMovie(result) || isTvShow(result));
+};
+
+export const details = async (type: TmdbMediaType, id: number) => {
+  const response = await fetch(
+    `${BASE_URL}/${type}/${id}?` +
+      new URLSearchParams({
+        api_key: API_KEY,
+      })
   );
+  const json = await response.json();
+  return json as TmdbDetails;
+};
+
+export const detailsMovie = async (id: number) => {
+  return (await details('movie', id)) as TmdbMovieDetails;
+};
+
+export const detailsTvShow = async (id: number) => {
+  return (await details('tv', id)) as TmdbTvShowDetails;
+};
+
+export const season = async (tvShowId: number, season: number) => {
+  const response = await fetch(
+    `${BASE_URL}/tv/${tvShowId}/season/${season}?` +
+      new URLSearchParams({
+        api_key: API_KEY,
+      })
+  );
+  return (await response.json()) as TmdbSeason;
 };
 
 // Util functions
@@ -96,6 +115,17 @@ export const convertGenreIds = (genreIds: number[]) => {
   return ((Object.keys(GENRE_IDS) as unknown) as Genre[]).filter((genre) =>
     genreIds.includes(GENRE_IDS[genre])
   );
+};
+
+export const convertGenresArray = (genres: { id: number; name: string }[]) => {
+  return genres.reduce<Genre[]>((convertedGenres, { id }) => {
+    const key = Object.keys(GENRE_IDS).find(
+      (key) => GENRE_IDS[key as Genre] === id
+    );
+
+    if (key !== undefined) convertedGenres.push(key as Genre);
+    return convertedGenres;
+  }, []);
 };
 
 export const getImageUrl = (backdropPath: string, large = false) => {
