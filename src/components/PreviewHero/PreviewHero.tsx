@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import { Button, Hero, PlayButton, Spinner } from '..';
+import { Button, Hero, PlayButton } from '..';
 import { getTrending } from '../../api/media';
+import { MediaType } from '../../enums';
 import { Medium } from '../../types';
 import mergeClassNames from '../../utils/merge-class-names';
 import truncateText from '../../utils/truncate-text';
@@ -9,12 +10,14 @@ import './PreviewHero.css';
 
 interface Props {
   medium?: Medium;
+  mediaType?: MediaType;
   modal?: boolean;
   showModal?(medium: Medium): void;
 }
 
 const PreviewHero = ({
   medium: initMedium,
+  mediaType,
   showModal,
   modal = false,
 }: Props) => {
@@ -22,11 +25,12 @@ const PreviewHero = ({
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (medium) return;
+    if (modal) return;
 
     const fetchData = async () => {
+      setIsLoading(true);
       try {
-        const trending = await getTrending();
+        const trending = await getTrending(mediaType);
         setMedium(trending[Math.floor(Math.random() * trending.length)]);
       } catch (err) {
         console.error(err);
@@ -34,9 +38,8 @@ const PreviewHero = ({
         setIsLoading(false);
       }
     };
-    setIsLoading(true);
     fetchData();
-  }, [medium]);
+  }, [mediaType, modal]);
 
   return (
     <Hero

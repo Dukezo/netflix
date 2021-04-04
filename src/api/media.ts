@@ -1,3 +1,4 @@
+import { type } from 'node:os';
 import { Genre, MediaType } from '../enums';
 import {
   Medium,
@@ -23,10 +24,15 @@ import {
   trendingMovies,
   trendingTvShows,
   season,
+  trending,
 } from './tmdb';
 
-export const getTrending = async () => {
-  const tmdbEntities = await trendingMovies();
+export const getTrending = async (type?: MediaType) => {
+  let tmdbEntities: TmdbEntity[];
+
+  if (type === MediaType.Movie) tmdbEntities = await trendingMovies();
+  else if (type === MediaType.TvShow) tmdbEntities = await trendingTvShows();
+  else tmdbEntities = await trending();
 
   return tmdbEntities.map((tmdbEntity) => {
     let props = null;
