@@ -17,24 +17,24 @@ const sliderConfig = {
     {title: 'Thriller Movies', mediaType: MediaType.Movie, genre: Genre.Thriller}
   ],
   'tv': [
-    {title: 'Trending Now', mediaType: MediaType.TvShow},
-    {title: 'Action & Adventure', mediaType: MediaType.TvShow, genre: Genre.ActionAdventure},
-    {title: 'Comedies', mediaType: MediaType.TvShow, genre: Genre.Comedy},
-    {title: 'Crime', mediaType: MediaType.TvShow, genre: Genre.Crime},
-    {title: 'Dramas', mediaType: MediaType.TvShow, genre: Genre.Drama},
-    {title: 'Animation', mediaType: MediaType.TvShow, genre: Genre.Animation},
-    {title: 'Documentary', mediaType: MediaType.TvShow, genre: Genre.Documentary},
-    {title: 'Sci-Fi', mediaType: MediaType.TvShow, genre: Genre.ScienceFiction}
+    {title: 'Trending Now'},
+    {title: 'Action & Adventure', genre: Genre.ActionAdventure},
+    {title: 'Comedies', genre: Genre.Comedy},
+    {title: 'Crime', genre: Genre.Crime},
+    {title: 'Dramas', genre: Genre.Drama},
+    {title: 'Animation', genre: Genre.Animation},
+    {title: 'Documentary', genre: Genre.Documentary},
+    {title: 'Sci-Fi', genre: Genre.ScienceFiction}
   ],
   'movies': [
-    {title: 'Trending Now', mediaType: MediaType.Movie},
-    {title: 'Action & Adventure', mediaType: MediaType.Movie, genre: Genre.Action},
-    {title: 'Comedies', mediaType: MediaType.Movie, genre: Genre.Comedy},
-    {title: 'Crime', mediaType: MediaType.Movie, genre: Genre.Crime},
-    {title: 'Dramas', mediaType: MediaType.Movie, genre: Genre.Drama},
-    {title: 'Animation', mediaType: MediaType.Movie, genre: Genre.Animation},
-    {title: 'Documentary', mediaType: MediaType.Movie, genre: Genre.Documentary},
-    {title: 'Sci-Fi', mediaType: MediaType.Movie, genre: Genre.ScienceFiction}
+    {title: 'Trending Now'},
+    {title: 'Action & Adventure',  genre: Genre.Action},
+    {title: 'Comedies', genre: Genre.Comedy},
+    {title: 'Crime', genre: Genre.Crime},
+    {title: 'Dramas', genre: Genre.Drama},
+    {title: 'Animation', genre: Genre.Animation},
+    {title: 'Documentary', genre: Genre.Documentary},
+    {title: 'Sci-Fi', genre: Genre.ScienceFiction}
   ]
 };
 
@@ -78,7 +78,9 @@ const Browse = () => {
         ).map((props, idx) => (
           <Slider
             key={filter ? filter + idx : idx}
-            {...props}
+            {...(!props.hasOwnProperty('mediaType')
+              ? { mediaType: getFilterMediaType(), ...props }
+              : props)}
             showModal={showModal}
           />
         ))}
