@@ -110,7 +110,9 @@ export const getEpisodes = async (tvShowId: number, seasonNum: number) => {
       id: tmdbEpisode.id,
       title: tmdbEpisode.name,
       description: tmdbEpisode.overview,
-      image: getImageUrl(tmdbEpisode.still_path),
+      image: tmdbEpisode.still_path
+        ? getImageUrl(tmdbEpisode.still_path)
+        : 'https://via.placeholder.com/150x83',
     } as TVShowEpisode;
   });
 };
