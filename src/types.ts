@@ -52,6 +52,7 @@ export interface TmdbMovieDetails extends TmdbMovie, TmdbDetails {
   runtime: number;
   budget: number;
   revenue: number;
+  release_date: string;
 }
 
 export interface TmdbTvShowDetails extends TmdbTvShow, TmdbDetails {
@@ -106,6 +107,7 @@ export interface TVShow extends Medium {}
 
 export interface MediumDetails extends Medium {
   tagline: string;
+  releaseDate: string;
 }
 
 export interface MovieDetails extends Movie, MediumDetails {
@@ -118,7 +120,6 @@ export interface TVShowDetails extends TVShow, MediumDetails {
   totalEpisodes: number;
   totalSeasons: number;
   inProduction: boolean;
-  firstAirDate: string;
 }
 
 export interface TVShowEpisode {

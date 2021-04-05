@@ -54,7 +54,7 @@ const Modal = ({ medium, closeModal }: Props) => {
                       <AiFillStar />{' '}
                       <span>{mediumDetails?.rating.toFixed(1)}</span>
                     </li>
-                    <li>2021</li>
+                    <li>{new Date(mediumDetails.releaseDate).getFullYear()}</li>
                     {mediumDetails.type === MediaType.TvShow ? (
                       <li>
                         {(mediumDetails as TVShowDetails).totalSeasons}{' '}

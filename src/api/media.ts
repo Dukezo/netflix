@@ -88,6 +88,7 @@ export const getMovieDetails = async (id: number) => {
     budget: tmdbMovieDetails.budget,
     revenue: tmdbMovieDetails.revenue,
     tagline: tmdbMovieDetails.tagline,
+    releaseDate: tmdbMovieDetails.release_date,
   } as MovieDetails;
 };
 
@@ -101,7 +102,7 @@ export const getTvShowDetails = async (id: number) => {
     totalEpisodes: tmdbTvShowDetails.number_of_episodes,
     totalSeasons: tmdbTvShowDetails.seasons.length,
     inProduction: tmdbTvShowDetails.in_production,
-    firstAirDate: tmdbTvShowDetails.first_air_date,
+    releaseDate: tmdbTvShowDetails.first_air_date,
     tagline: tmdbTvShowDetails.tagline,
   } as TVShowDetails;
 };
