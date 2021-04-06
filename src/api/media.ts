@@ -1,4 +1,3 @@
-import { type } from 'node:os';
 import { Genre, MediaType } from '../enums';
 import {
   Medium,

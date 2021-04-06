@@ -4,8 +4,6 @@ import './Navbar.css';
 import mergeClassNames from '../../utils/merge-class-names';
 import NavbarNotifications from './NavbarNotifications/NavbarNotifications';
 import NavbarProfile from './NavbarProfile/NavbarProfile';
-import NavbarDropdown from './NavbarDropdown/NavbarDropdown';
-import { IoMdArrowDropdown } from 'react-icons/io';
 import NavbarFilterMenu from './NavbarFilterMenu/NavbarFilterMenu';
 
 interface Props {}
