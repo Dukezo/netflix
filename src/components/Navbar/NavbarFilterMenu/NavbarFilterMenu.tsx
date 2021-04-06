@@ -1,15 +1,14 @@
 import React from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
+import { ROUTE_BROWSE } from '../../../constants/routes';
 import NavbarDropdown from '../NavbarDropdown/NavbarDropdown';
 import './NavbarFilterMenu.css';
 
-interface Props {}
-
 const navLinks = [
-  { name: 'Home', to: '/browse' },
-  { name: 'TV Shows', to: '/browse/tv' },
-  { name: 'Movies', to: '/browse/movies' },
+  { name: 'Home', to: ROUTE_BROWSE },
+  { name: 'TV Shows', to: `${ROUTE_BROWSE}/tv` },
+  { name: 'Movies', to: `${ROUTE_BROWSE}/movies` },
 ];
 
 const renderNavLinks = () => {
@@ -20,7 +19,7 @@ const renderNavLinks = () => {
   ));
 };
 
-const NavbarFilterMenu = (props: Props) => {
+const NavbarFilterMenu = () => {
   return (
     <div className="NavbarFilterMenu">
       <div className="NavbarFilterMenu__menu">{renderNavLinks()}</div>
