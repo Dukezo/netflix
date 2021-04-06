@@ -21,3 +21,11 @@
 .NavbarProfile__dropdown:hover {
   text-decoration: underline;
 }
+
+.NavbarProfile__email {
+  font-size: 0.85rem;
+  color: whitesmoke;
+  text-align: center;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}

@@ -1,5 +1,9 @@
 import { Genre, MediaType } from './enums';
 
+export interface User {
+  email: string;
+}
+
 export interface AccordionData {
   title: string;
   description: string;

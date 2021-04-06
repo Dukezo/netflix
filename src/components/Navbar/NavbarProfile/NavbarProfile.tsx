@@ -3,8 +3,20 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 import NavbarDropdown from '../NavbarDropdown/NavbarDropdown';
 import './NavbarProfile.css';
 import avatar from '../../../assets/images/avatar-1.png';
+import { useAuth } from '../../../contexts/auth';
+import { useHistory } from 'react-router';
+import { ROUTE_HOME } from '../../../constants/routes';
 
 const NavbarProfile = () => {
+  const { user, logout } = useAuth();
+  const history = useHistory();
+
+  const handleLogout = () => {
+    logout()
+      .then(() => history.push(ROUTE_HOME))
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className="NavbarProfile">
       <NavbarDropdown
@@ -16,8 +28,9 @@ const NavbarProfile = () => {
         }
         caretOffset={28}
       >
+        <div className="NavbarProfile__email">{user?.email}</div>
         <ul className="NavbarProfile__dropdown">
-          <li>Sign out of Netflix </li>
+          <li onClick={handleLogout}>Sign out of Netflix </li>
         </ul>
       </NavbarDropdown>
     </div>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTE_HOME } from '../../constants/routes';
+import { ROUTE_BROWSE, ROUTE_HOME } from '../../constants/routes';
+import { useAuth } from '../../contexts/auth';
 import mergeClassNames from '../../utils/merge-class-names';
 import './Logo.css';
 
 const Logo = ({ ...rest }) => {
+  const { user } = useAuth();
+
   return (
-    <Link to={ROUTE_HOME}>
+    <Link to={user ? ROUTE_BROWSE : ROUTE_HOME}>
       <svg
         viewBox="0 0 111 30"
         focusable="false"
