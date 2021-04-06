@@ -32,6 +32,7 @@
   font-size: 1.6rem;
   left: 77%;
   top: 5px;
+  pointer-events: none;
 }
 
 .EpisodeGuide__seasonPicker select {
