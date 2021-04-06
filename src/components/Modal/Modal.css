@@ -135,3 +135,19 @@
   margin-top: 1px;
   cursor: pointer;
 }
+
+@media (max-width: 576px) {
+  .Modal__body {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .Modal__info {
+    flex-direction: column;
+  }
+
+  .Modal__infoRight {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+}

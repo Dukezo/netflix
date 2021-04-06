@@ -15,4 +15,8 @@
   .HeaderHero__content {
     margin-top: 90px;
   }
+
+  .HeaderHero__languagePicker {
+    display: none;
+  }
 }

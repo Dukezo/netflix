@@ -51,5 +51,6 @@
 
   .NavbarFilterMenu__mobileMenu {
     display: block;
+    margin-left: 20px;
   }
 }

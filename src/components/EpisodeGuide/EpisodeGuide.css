@@ -59,6 +59,7 @@
   padding: 15px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  flex-wrap: wrap;
 }
 
 .EpisodeGuide__episode:first-of-type {
@@ -97,4 +98,15 @@
 .EpisodeGuide__error {
   text-align: center;
   color: red;
+}
+
+@media (max-width: 576px) {
+  .EpisodeGuide__image {
+    max-width: 80%;
+  }
+
+  .EpisodeGuide__info {
+    flex-basis: 100%;
+    margin-top: 5px;
+  }
 }

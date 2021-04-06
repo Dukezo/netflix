@@ -82,3 +82,10 @@
   padding: 0 60px;
   position: relative;
 }
+
+@media (max-width: 576px) {
+  .Slider__slideLeft,
+  .Slider__slideRight {
+    opacity: 1;
+  }
+}

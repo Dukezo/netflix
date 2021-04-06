@@ -26,7 +26,7 @@ const NavbarProfile = () => {
             <IoMdArrowDropdown />
           </div>
         }
-        caretOffset={28}
+        caretOffset={48}
       >
         <div className="NavbarProfile__email">{user?.email}</div>
         <ul className="NavbarProfile__dropdown">

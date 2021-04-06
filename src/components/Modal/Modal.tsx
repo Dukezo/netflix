@@ -74,7 +74,7 @@ const Modal = ({ medium, closeModal }: Props) => {
                   <div className="Modal__metaRow">
                     <span className="Modal__metaTitle">Genres: </span>
                     {mediumDetails?.genres.slice(0, 3).map((genre, idx) => (
-                      <span>
+                      <span key={idx}>
                         {genre}
                         {idx !== mediumDetails.genres.length - 1 ? ', ' : ''}
                       </span>

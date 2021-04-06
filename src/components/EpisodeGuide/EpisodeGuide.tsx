@@ -34,7 +34,11 @@ const EpisodeGuide = ({ tvShowDetails }: Props) => {
     let options = [];
 
     for (let i = 1; i <= tvShowDetails.totalSeasons; i++) {
-      options.push(<option value={i}>Season {i}</option>);
+      options.push(
+        <option key={i} value={i}>
+          Season {i}
+        </option>
+      );
     }
 
     return options;

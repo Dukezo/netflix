@@ -12,13 +12,13 @@ import {
 } from '../../components';
 import { ROUTE_LOGIN } from '../../constants/routes';
 
-const FeatureHero = () => {
+const HeaderHero = () => {
   return (
     <Hero image={bgImage}>
       <Header>
         <Menu
           items={[
-            <LanguagePicker />,
+            <LanguagePicker className="HeaderHero__languagePicker" />,
             <Button link={ROUTE_LOGIN}>Sign In</Button>,
           ]}
         />
@@ -36,4 +36,4 @@ const FeatureHero = () => {
   );
 };
 
-export default FeatureHero;
+export default HeaderHero;
