@@ -6,6 +6,7 @@ interface InputField {
   label: string;
   ref?: RefObject<HTMLInputElement>;
   error?: string;
+  defaultValue?: string;
 }
 
 interface Props {
@@ -23,11 +24,12 @@ const SignForm = ({
 }: Props) => {
   return (
     <form onSubmit={onSubmit}>
-      {fields.map(({ label, ref, error, ...props }, idx) => (
+      {fields.map(({ label, ref, defaultValue, error, ...props }, idx) => (
         <Input
           key={idx}
           label={label}
           ref={ref}
+          defaultValue={defaultValue}
           containerClassName="SignForm__inputContainer"
           className="SignForm__input"
           variant="dark"

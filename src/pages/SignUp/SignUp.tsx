@@ -1,5 +1,5 @@
 import React, { FormEvent, useRef, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { SignForm, SignPageLayout } from '../../components';
 import { ROUTE_BROWSE, ROUTE_LOGIN } from '../../constants/routes';
 import { useAuth } from '../../contexts/auth';
@@ -16,13 +16,15 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { signup } = useAuth();
   const history = useHistory();
-
+  const location = useLocation();
+  const queryEmail = new URLSearchParams(location.search).get('email');
   const formFields = [
     {
       label: 'Email',
       ref: emailRef,
       type: 'text',
       error: emailError,
+      defaultValue: queryEmail || undefined,
     },
     {
       label: 'Password',
