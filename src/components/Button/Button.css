@@ -19,3 +19,7 @@
 .Button__link {
   text-decoration: none;
 }
+
+.Button:disabled {
+  opacity: 0.7;
+}

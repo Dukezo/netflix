@@ -11,10 +11,16 @@ interface InputField {
 interface Props {
   fields: (InputField & React.InputHTMLAttributes<HTMLInputElement>)[];
   buttonText: string;
+  buttonDisabled?: boolean;
   onSubmit?(e: FormEvent<HTMLFormElement>): void;
 }
 
-const SignForm = ({ fields, buttonText, onSubmit }: Props) => {
+const SignForm = ({
+  fields,
+  buttonText,
+  buttonDisabled = false,
+  onSubmit,
+}: Props) => {
   return (
     <form onSubmit={onSubmit}>
       {fields.map(({ label, ref, error, ...props }, idx) => (
@@ -29,7 +35,13 @@ const SignForm = ({ fields, buttonText, onSubmit }: Props) => {
           {...props}
         />
       ))}
-      <Button className="SignForm__submit">{buttonText}</Button>
+      <Button
+        className="SignForm__submit"
+        type="submit"
+        disabled={buttonDisabled}
+      >
+        {buttonText}
+      </Button>
     </form>
   );
 };
