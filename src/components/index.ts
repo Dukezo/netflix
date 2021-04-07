@@ -24,3 +24,4 @@ export { default as Slider } from './Slider/Slider';
 export { default as Modal } from './Modal/Modal';
 export { default as Spinner } from './Spinner/Spinner';
 export { default as EpisodeGuide } from './EpisodeGuide/EpisodeGuide';
+export { default as ScrollToTop } from './ScrollToTop/ScrollToTop';
