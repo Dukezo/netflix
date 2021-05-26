@@ -1,18 +1,17 @@
 import { Genre, MediaType } from '../enums';
 import {
   Medium,
-  Movie,
   MovieDetails,
+  TmdbDetails,
   TmdbEntity,
   TmdbMovie,
   TmdbTvShow,
-  TVShow,
   TVShowDetails,
   TVShowEpisode,
 } from '../types';
 import {
   convertGenreIds,
-  convertGenresArray,
+  convertGenreObjects,
   detailsMovie,
   detailsTvShow,
   discoverMovies,
@@ -20,6 +19,7 @@ import {
   getImageUrl,
   isMovie,
   isTvShow,
+  isDetailsEntity,
   trendingMovies,
   trendingTvShows,
   season,
@@ -50,30 +50,28 @@ export const getTrending = async (type?: MediaType) => {
 };
 
 export const getMovies = async (genre?: Genre) => {
-  const tmdbMovies = (genre !== undefined
-    ? await discoverMovies(genre)
-    : await trendingMovies()
+  const tmdbMovies = (
+    genre !== undefined ? await discoverMovies(genre) : await trendingMovies()
   ).filter((tmdbMovie) => tmdbMovie.backdrop_path);
 
   return tmdbMovies.map((tmdbMovie) => {
     return {
       ...getMediumProps(tmdbMovie),
       ...getMovieProps(tmdbMovie),
-    } as Movie;
+    } as Medium;
   });
 };
 
 export const getTvShows = async (genre?: Genre) => {
-  const tmdbTvShows = (genre !== undefined
-    ? await discoverTvShows(genre)
-    : await trendingTvShows()
+  const tmdbTvShows = (
+    genre !== undefined ? await discoverTvShows(genre) : await trendingTvShows()
   ).filter((tmdbTvShow) => tmdbTvShow.backdrop_path);
 
   return tmdbTvShows.map((tmdbTvShow) => {
     return {
       ...getMediumProps(tmdbTvShow),
       ...getTvShowProps(tmdbTvShow),
-    } as TVShow;
+    } as Medium;
   });
 };
 
@@ -82,7 +80,6 @@ export const getMovieDetails = async (id: number) => {
   return {
     ...getMediumProps(tmdbMovieDetails),
     ...getMovieProps(tmdbMovieDetails),
-    genres: convertGenresArray(tmdbMovieDetails.genres),
     runtime: tmdbMovieDetails.runtime,
     budget: tmdbMovieDetails.budget,
     revenue: tmdbMovieDetails.revenue,
@@ -96,8 +93,6 @@ export const getTvShowDetails = async (id: number) => {
   return {
     ...getMediumProps(tmdbTvShowDetails),
     ...getTvShowProps(tmdbTvShowDetails),
-    title: tmdbTvShowDetails.name,
-    genres: convertGenresArray(tmdbTvShowDetails.genres),
     totalEpisodes: tmdbTvShowDetails.number_of_episodes,
     totalSeasons: tmdbTvShowDetails.seasons.length,
     inProduction: tmdbTvShowDetails.in_production,
@@ -135,12 +130,14 @@ const getTvShowProps = (tmdbTvShow: TmdbTvShow) => {
   };
 };
 
-const getMediumProps = (tmdbEntity: TmdbEntity) => {
+const getMediumProps = (tmdbEntity: TmdbEntity | TmdbDetails) => {
   return {
     id: tmdbEntity.id,
     image: getImageUrl(tmdbEntity.backdrop_path),
     largeImage: getImageUrl(tmdbEntity.backdrop_path, true),
-    genres: tmdbEntity.genre_ids ? convertGenreIds(tmdbEntity.genre_ids) : [],
+    genres: isDetailsEntity(tmdbEntity)
+      ? convertGenreObjects((tmdbEntity as TmdbDetails).genres)
+      : convertGenreIds((tmdbEntity as TmdbEntity).genre_ids),
     description: tmdbEntity.overview,
     rating: tmdbEntity.vote_average,
   };

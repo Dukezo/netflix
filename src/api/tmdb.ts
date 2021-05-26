@@ -9,6 +9,7 @@ import {
   TmdbMovieDetails,
   TmdbTvShowDetails,
   TmdbSeason,
+  TmdbGenre,
 } from '../types';
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY as string;
@@ -112,12 +113,12 @@ export const season = async (tvShowId: number, season: number) => {
 
 // Util functions
 export const convertGenreIds = (genreIds: number[]) => {
-  return ((Object.keys(GENRE_IDS) as unknown) as Genre[]).filter((genre) =>
+  return (Object.keys(GENRE_IDS) as unknown as Genre[]).filter((genre) =>
     genreIds.includes(GENRE_IDS[genre])
   );
 };
 
-export const convertGenresArray = (genres: { id: number; name: string }[]) => {
+export const convertGenreObjects = (genres: TmdbGenre[]) => {
   return genres.reduce<Genre[]>((convertedGenres, { id }) => {
     const key = Object.keys(GENRE_IDS).find(
       (key) => GENRE_IDS[key as Genre] === id
@@ -147,4 +148,10 @@ export const isTvShow = (entity: TmdbEntity): entity is TmdbTvShow => {
     tvShow.name !== undefined &&
     (tvShow.media_type !== undefined ? tvShow.media_type === 'tv' : true)
   );
+};
+
+export const isDetailsEntity = (
+  entity: TmdbEntity | TmdbDetails
+): entity is TmdbDetails => {
+  return (entity as TmdbDetails).genres !== undefined;
 };

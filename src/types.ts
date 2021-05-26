@@ -19,20 +19,23 @@ export interface TmdbGenre {
   name: string;
 }
 
-export interface TmdbEntity {
+interface TmdbEntityProps {
   poster_path: string;
   overview: string;
   id: number;
   popularity: number;
   backdrop_path: string;
-  genre_ids: number[];
   vote_average: number;
   orignal_language: string;
   vote_count: number;
   media_type: TmdbMediaType;
 }
 
-export interface TmdbMovie extends TmdbEntity {
+interface TmdbGenreIds {
+  genre_ids: number[];
+}
+
+interface TmdbMovieProps {
   release_date: string;
   original_title: string;
   title: string;
@@ -40,31 +43,37 @@ export interface TmdbMovie extends TmdbEntity {
   adult: boolean;
 }
 
-export interface TmdbTvShow extends TmdbEntity {
+interface TmdbTvShowProps {
   first_air_date: string;
   origin_country: string[];
   name: string;
   originalName: string;
 }
 
-export interface TmdbDetails extends TmdbEntity {
+export type TmdbEntity = TmdbEntityProps & TmdbGenreIds;
+export type TmdbMovie = TmdbMovieProps & TmdbEntityProps & TmdbGenreIds;
+export type TmdbTvShow = TmdbTvShowProps & TmdbEntityProps & TmdbGenreIds;
+
+export interface TmdbDetails extends TmdbEntityProps {
   tagline: string;
   genres: TmdbGenre[];
 }
 
-export interface TmdbMovieDetails extends TmdbMovie, TmdbDetails {
+export interface TmdbMovieDetails extends TmdbMovieProps, TmdbDetails {
   runtime: number;
   budget: number;
   revenue: number;
   release_date: string;
+  genre_ids: never;
 }
 
-export interface TmdbTvShowDetails extends TmdbTvShow, TmdbDetails {
+export interface TmdbTvShowDetails extends TmdbTvShowProps, TmdbDetails {
   episode_run_time: number;
   number_of_episodes: number;
   seasons: TmdbSeason[];
   in_production: boolean;
   first_air_date: string;
+  genre_ids: never;
 }
 
 export interface TmdbSeason {
@@ -103,24 +112,20 @@ export interface Medium {
   rating: number;
   genres: Genre[];
   type: MediaType;
-  details: MediumDetails;
 }
-
-export interface Movie extends Medium {}
-export interface TVShow extends Medium {}
 
 export interface MediumDetails extends Medium {
   tagline: string;
   releaseDate: string;
 }
 
-export interface MovieDetails extends Movie, MediumDetails {
+export interface MovieDetails extends MediumDetails {
   budget: number;
   revenue: number;
   runtime: number;
 }
 
-export interface TVShowDetails extends TVShow, MediumDetails {
+export interface TVShowDetails extends MediumDetails {
   totalEpisodes: number;
   totalSeasons: number;
   inProduction: boolean;
