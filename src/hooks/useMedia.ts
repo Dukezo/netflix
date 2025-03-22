@@ -22,7 +22,7 @@ const useMedia = (type?: MediaType, genre?: Genre) => {
         }
       } catch (err) {
         console.error(err);
-        setError(err.message);
+        setError((err as Error).message);
       }
     };
     setIsLoading(true);

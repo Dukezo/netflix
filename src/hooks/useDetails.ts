@@ -20,7 +20,7 @@ const useDetails = (id: number, type: MediaType) => {
         }
       } catch (err) {
         console.error(err);
-        setError(err.message);
+        setError((err as Error).message);
       }
     };
     setIsLoading(true);

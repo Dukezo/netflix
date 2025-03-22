@@ -39,8 +39,7 @@ export const getTrending = async (type?: MediaType) => {
     let props = null;
 
     if (isMovie(tmdbEntity)) props = getMovieProps(tmdbEntity as TmdbMovie);
-    else if (isTvShow(tmdbEntity))
-      props = getTvShowProps(tmdbEntity as TmdbTvShow);
+    else if (isTvShow(tmdbEntity)) props = getTvShowProps(tmdbEntity as TmdbTvShow);
 
     return {
       ...props,
@@ -50,9 +49,9 @@ export const getTrending = async (type?: MediaType) => {
 };
 
 export const getMovies = async (genre?: Genre) => {
-  const tmdbMovies = (
-    genre !== undefined ? await discoverMovies(genre) : await trendingMovies()
-  ).filter((tmdbMovie) => tmdbMovie.backdrop_path);
+  const tmdbMovies = (genre !== undefined ? await discoverMovies(genre) : await trendingMovies()).filter(
+    (tmdbMovie) => tmdbMovie.backdrop_path
+  );
 
   return tmdbMovies.map((tmdbMovie) => {
     return {
@@ -63,9 +62,9 @@ export const getMovies = async (genre?: Genre) => {
 };
 
 export const getTvShows = async (genre?: Genre) => {
-  const tmdbTvShows = (
-    genre !== undefined ? await discoverTvShows(genre) : await trendingTvShows()
-  ).filter((tmdbTvShow) => tmdbTvShow.backdrop_path);
+  const tmdbTvShows = (genre !== undefined ? await discoverTvShows(genre) : await trendingTvShows()).filter(
+    (tmdbTvShow) => tmdbTvShow.backdrop_path
+  );
 
   return tmdbTvShows.map((tmdbTvShow) => {
     return {
@@ -109,9 +108,7 @@ export const getEpisodes = async (tvShowId: number, seasonNum: number) => {
       id: tmdbEpisode.id,
       title: tmdbEpisode.name,
       description: tmdbEpisode.overview,
-      image: tmdbEpisode.still_path
-        ? getImageUrl(tmdbEpisode.still_path)
-        : 'https://via.placeholder.com/150x83',
+      image: tmdbEpisode.still_path ? getImageUrl(tmdbEpisode.still_path) : 'https://placehold.co/150x83',
     } as TVShowEpisode;
   });
 };

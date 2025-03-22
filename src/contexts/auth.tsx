@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../api/firebase';
 import { User } from '../types';
 
@@ -6,7 +7,7 @@ interface ContextProps {
   user?: User;
   signup(email: string, password: string): Promise<void>;
   login(email: string, password: string): Promise<void>;
-  logout(): Promise<any>;
+  logout(): Promise<void>;
 }
 
 const AuthContext = React.createContext<ContextProps | undefined>(undefined);
@@ -42,11 +43,11 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signup = async (email: string, password: string) => {
-    await auth.createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(auth, email, password);
   };
 
   const login = async (email: string, password: string) => {
-    await auth.signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
   const logout = async () => {
@@ -66,8 +67,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
 
-  if (context === undefined)
-    throw Error('useAuth can only be used within an AuthProvider.');
+  if (context === undefined) throw Error('useAuth can only be used within an AuthProvider.');
 
   return context;
 };
